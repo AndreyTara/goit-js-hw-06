@@ -27,7 +27,7 @@ class Storage {
    */
 
   getItems(arr) {
-    return this.arr.bind(this);
+    return this.arr;
   }
   /**
    * Додає елемент у масив, який зберігається в об'єкті Storage.
@@ -58,6 +58,7 @@ console.log('Задача 2. Склад');
 
 const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+
 storage.addItem('Droid');
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 storage.removeItem('Prolonger');
