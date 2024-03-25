@@ -27,7 +27,7 @@ class Storage {
    */
 
   getItems(arr) {
-    return this.arr;
+    return this.arr.bind(this);
   }
   /**
    * Додає елемент у масив, який зберігається в об'єкті Storage.
