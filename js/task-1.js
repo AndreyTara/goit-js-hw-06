@@ -53,7 +53,7 @@ const customer = {
    * @param {String} order - Назва нового замовлення.
    */
   addOrder(cost, order) {
-    this.balance = this.balance - cost - cost * this.discount;
+    this.balance -= cost - cost * this.discount;
     this.orders.push(order);
   },
 

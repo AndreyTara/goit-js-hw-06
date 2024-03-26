@@ -13,12 +13,13 @@
  * Являє собою ємність для зберігання.
  */
 class Storage {
+  #items;
   /**
    * Створює екземпляр Storage.
-   * @param {Array} arr -Ініціалізація массиву в обїекті Storage.
+   * @param {Array} items -Ініціалізація массиву в обїекті Storage.
    */
-  constructor(arr) {
-    this.arr = arr;
+  constructor(items) {
+    this.#items = items;
   }
   /**
    * Повертає масив, який зберігається в об'єкті Storage.
@@ -27,7 +28,7 @@ class Storage {
    */
 
   getItems(arr) {
-    return this.arr;
+    return this.#items;
   }
   /**
    * Додає елемент у масив, який зберігається в об'єкті Storage.
@@ -36,7 +37,7 @@ class Storage {
    * @returns {Array<String>} - Оновлений масив після додавання нового елемента.
    */
   addItem(newItem) {
-    return this.arr.push(newItem);
+    return this.#items.push(newItem);
   }
   /**
    * Видаляє елемент з масиву, який зберігається в об'єкті Storage.
@@ -45,11 +46,11 @@ class Storage {
    * @returns {Array<String>} - Оновлений масив після видалення нового елемента.
    */
   removeItem(itemToRemove) {
-    const indexDel = this.arr.findIndex(el => el === itemToRemove);
+    const indexDel = this.#items.findIndex(item => item === itemToRemove);
     if (indexDel === -1) {
       return console.log(`Елемент - "${itemToRemove}" не знайдено у масиві.`);
     }
-    return this.arr.splice(indexDel, 1);
+    return this.#items.splice(indexDel, 1);
   }
 }
 
