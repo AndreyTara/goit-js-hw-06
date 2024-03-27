@@ -37,7 +37,8 @@ class Storage {
    * @returns {Array<String>} - Оновлений масив після додавання нового елемента.
    */
   addItem(newItem) {
-    return this.#items.push(newItem);
+    this.#items.push(newItem);
+    return this.#items;
   }
   /**
    * Видаляє елемент з масиву, який зберігається в об'єкті Storage.
@@ -47,7 +48,8 @@ class Storage {
    */
   removeItem(itemToRemove) {
     const indexToRemove = this.#items.indexOf(itemToRemove);
-    return this.#items.splice(indexToRemove, 1);
+    this.#items.splice(indexToRemove, 1);
+    return this.#items;
   }
 }
 
