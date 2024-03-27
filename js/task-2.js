@@ -27,7 +27,7 @@ class Storage {
    * @returns {Array<String>} - Збережений масив.
    */
 
-  getItems(arr) {
+  getItems() {
     return this.#items;
   }
   /**
@@ -46,20 +46,15 @@ class Storage {
    * @returns {Array<String>} - Оновлений масив після видалення нового елемента.
    */
   removeItem(itemToRemove) {
-    const indexDel = this.#items.findIndex(item => item === itemToRemove);
-    if (indexDel === -1) {
-      return console.log(`Елемент - "${itemToRemove}" не знайдено у масиві.`);
-    }
-    return this.#items.splice(indexDel, 1);
+    const indexToRemove = this.#items.indexOf(itemToRemove);
+    return this.#items.splice(indexToRemove, 1);
   }
 }
 
 console.log('Задача 2. Склад');
 // У консоль будуть виведені результати її роботи.
-
 const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-
 storage.addItem('Droid');
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 storage.removeItem('Prolonger');

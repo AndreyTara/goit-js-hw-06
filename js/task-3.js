@@ -39,7 +39,7 @@ class StringBuilder {
    * @returns {String} - Збережена строчка.
    */
   padEnd(str) {
-    return this.#value.concat(str);
+    return (this.#value += str);
   }
   /**
    * Повертає додату Str на кінець строки, яка зберігається в об'єкті StringBuilder.
@@ -57,7 +57,7 @@ class StringBuilder {
    * @returns {String} - Збережена строчка.
    */
   padBoth(str) {
-    return (this.#value = str.concat(this.#value, str));
+    return this.padStart(str) + this.padEnd(str);
   }
 }
 
