@@ -46,9 +46,10 @@ class Storage {
    * @returns {Array<String>} - Оновлений масив після видалення нового елемента.
    */
   removeItem(itemToRemove) {
-    const indexToRemove = this.#items.indexOf(itemToRemove);
-    if (indexToRemove === -1) return;
-    this.#items.splice(indexToRemove, 1);
+    this.#items = this.#items.filter(el => el !== itemToRemove);
+    // const indexToRemove = this.#items.indexOf(itemToRemove);
+    // if (indexToRemove === -1) return;
+    // this.#items.splice(indexToRemove, 1);
   }
 }
 
