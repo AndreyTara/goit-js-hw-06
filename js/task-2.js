@@ -38,7 +38,6 @@ class Storage {
    */
   addItem(newItem) {
     this.#items.push(newItem);
-    return this.#items;
   }
   /**
    * Видаляє елемент з масиву, який зберігається в об'єкті Storage.
@@ -48,14 +47,15 @@ class Storage {
    */
   removeItem(itemToRemove) {
     const indexToRemove = this.#items.indexOf(itemToRemove);
+    if (indexToRemove === -1) return;
     this.#items.splice(indexToRemove, 1);
-    return this.#items;
   }
 }
 
 console.log('Задача 2. Склад');
 // У консоль будуть виведені результати її роботи.
 const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
 storage.addItem('Droid');
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
